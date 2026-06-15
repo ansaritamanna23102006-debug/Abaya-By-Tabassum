@@ -73,7 +73,7 @@ export default function CartPage() {
                   <div className="flex-1 space-y-2">
                     <div className="flex justify-between items-start gap-2">
                       <h3 className="font-serif text-base font-semibold leading-tight">{item.name}</h3>
-                      <span className="font-bold text-primary-gold whitespace-nowrap flex-shrink-0">${item.price}</span>
+                      <span className="font-bold text-primary-gold whitespace-nowrap flex-shrink-0">₹{item.price}</span>
                     </div>
                     <p className="text-xs text-muted-text">Size: {item.selectedSize}</p>
 
@@ -135,17 +135,17 @@ export default function CartPage() {
               <div className="space-y-3 text-xs pt-4 border-t border-border-custom/50 font-light text-secondary-text">
                 <div className="flex justify-between">
                   <span>Bag Subtotal</span>
-                  <span>${cartTotal}</span>
+                  <span>₹{cartTotal}</span>
                 </div>
                 {discountPercent > 0 && (
                   <div className="flex justify-between text-green-750">
                     <span>Discount Applied ({discountPercent}%)</span>
-                    <span>-${(cartTotal * discountPercent) / 100}</span>
+                    <span>-₹{(cartTotal * discountPercent) / 100}</span>
                   </div>
                 )}
                 <div className="flex justify-between text-sm font-semibold border-t border-border-custom/50 pt-3 text-primary-text">
                   <span>Order Total</span>
-                  <span className="text-primary-gold font-bold">${calculatedTotal.toFixed(2)}</span>
+                  <span className="text-primary-gold font-bold">₹{calculatedTotal.toFixed(2)}</span>
                 </div>
               </div>
 

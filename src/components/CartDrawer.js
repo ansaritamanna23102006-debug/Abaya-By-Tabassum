@@ -93,8 +93,8 @@ export default function CartDrawer() {
                           <h3 className="font-serif text-sm font-medium tracking-wide text-primary-text">
                             {item.name}
                           </h3>
-                          <span className="font-medium text-sm text-primary-gold ml-2">
-                            ${item.price}
+                           <span className="font-medium text-sm text-primary-gold ml-2">
+                            ₹{item.price}
                           </span>
                         </div>
                         <p className="text-xs text-muted-text mt-1 font-light">
@@ -144,7 +144,7 @@ export default function CartDrawer() {
                     Estimated Subtotal
                   </span>
                   <span className="font-serif text-xl font-bold text-primary-gold">
-                    ${cartTotal.toFixed(2)}
+                    ₹{cartTotal.toFixed(2)}
                   </span>
                 </div>
                 <p className="text-[10px] text-muted-text mb-6 uppercase tracking-wider">

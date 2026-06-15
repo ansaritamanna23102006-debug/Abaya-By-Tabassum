@@ -68,7 +68,7 @@ function SearchContent() {
                 <h3 className="font-serif text-base font-semibold mt-4 text-primary-text group-hover:text-primary-gold transition-colors">
                   {p.name}
                 </h3>
-                <p className="text-sm font-bold text-primary-gold mt-2">${p.price}</p>
+                <p className="text-sm font-bold text-primary-gold mt-2">₹{p.price}</p>
               </Link>
             ))}
           </div>

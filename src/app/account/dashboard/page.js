@@ -145,14 +145,14 @@ export default function AccountDashboard() {
                         </div>
                       </div>
                       <div className="text-[11px] text-secondary-text">
-                        Date: {ord.date} | Total paid: ${ord.total}
+                        Date: {ord.date} | Total paid: ₹{ord.total}
                       </div>
 
                       <div className="border-t border-border-custom/50 pt-3 space-y-2">
                         {ord.items.map((item) => (
                           <div key={item.id || item.name} className="flex justify-between items-center text-xs">
                             <span className="font-medium text-primary-text">{item.name} ({item.selectedSize})</span>
-                            <span className="text-muted-text">Qty: {item.quantity} | ${item.price}</span>
+                            <span className="text-muted-text">Qty: {item.quantity} | ₹{item.price}</span>
                           </div>
                         ))}
                       </div>

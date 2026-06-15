@@ -53,7 +53,7 @@ export default function Navbar() {
       >
         {/* Navbar Container Capsule */}
         <div
-          className={`max-w-6xl mx-auto w-full transition-all duration-700 glass-panel rounded-full border flex items-center justify-between ${
+          className={`max-w-6xl mx-auto w-full transition-all duration-700 glass-panel rounded-full border flex items-center justify-between relative ${
             isScrolled
               ? "shadow-[0_8px_32px_0_rgba(5,5,5,0.3)] py-3 px-8 border-primary-gold/25"
               : "shadow-[0_4px_24px_0_rgba(5,5,5,0.15)] py-4 px-8 border-primary-gold/15"
@@ -84,7 +84,7 @@ export default function Navbar() {
           </div>
 
           {/* Center: Brand Centerpiece Logo */}
-          <div className="flex justify-center items-center md:w-2/12 flex-shrink-0">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-shrink-0">
             <Link href="/" className="transform transition-transform duration-500 hover:scale-105 cursor-pointer">
               <Logo className="h-9" />
             </Link>
@@ -279,7 +279,7 @@ export default function Navbar() {
                 <p className="uppercase tracking-[0.3em] font-bold text-primary-gold">
                   Abaya By Tabassum
                 </p>
-                <p>Concierge: concierge@abayabytabassum.com</p>
+                <p>Concierge: abayabytabassum03@gmail.com</p>
                 <p>© 2026. Custom Atelier Design.</p>
               </div>
             </motion.div>

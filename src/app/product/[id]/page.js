@@ -15,6 +15,7 @@ export default function ProductDetailPage({ params }) {
 
   const { addToCart, wishlist, toggleWishlist } = useCart();
   const [selectedSize, setSelectedSize] = useState("M");
+  const [customLength, setCustomLength] = useState("56");
   const [activeTab, setActiveTab] = useState("description");
   
   const [productsList, setProductsList] = useState([]);
@@ -170,15 +171,15 @@ export default function ProductDetailPage({ params }) {
                 {product.discountPrice ? (
                   <>
                     <span className="font-serif text-3xl font-semibold text-primary-gold">
-                      ${product.discountPrice}
+                      ₹{product.discountPrice}
                     </span>
                     <span className="text-sm text-muted-text line-through">
-                      ${product.price}
+                      ₹{product.price}
                     </span>
                   </>
                 ) : (
                   <span className="font-serif text-3xl font-semibold text-primary-text">
-                    ${product.price}
+                    ₹{product.price}
                   </span>
                 )}
               </div>
@@ -205,30 +206,40 @@ export default function ProductDetailPage({ params }) {
                 {product.description}
               </p>
 
-              {/* Premium Size Selector */}
-              <div className="pt-4">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-[9px] uppercase tracking-[0.2em] font-semibold text-primary-text">
-                    Select Size
-                  </span>
-                  <span className="text-[9px] uppercase tracking-[0.2em] font-semibold text-primary-gold cursor-pointer hover:underline">
-                    Size Calculator
-                  </span>
+              {/* Premium Size Selector & Custom Length */}
+              <div className="pt-4 grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-[9px] uppercase tracking-[0.2em] font-semibold text-primary-text">
+                      Select Size
+                    </span>
+                  </div>
+                  <select
+                    value={selectedSize}
+                    onChange={(e) => setSelectedSize(e.target.value)}
+                    className="w-full bg-bg-card border border-border-custom p-3 text-xs focus:outline-none focus:border-soft-gold text-primary-text cursor-pointer"
+                  >
+                    {product.sizes && product.sizes.map((size) => (
+                      <option key={size} value={size}>
+                        {size}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-                <div className="flex gap-3">
-                  {product.sizes.map((size) => (
-                    <button
-                      key={size}
-                      onClick={() => setSelectedSize(size)}
-                      className={`w-12 h-12 border text-xs font-semibold flex items-center justify-center transition-all ${
-                        selectedSize === size
-                          ? "border-secondary-gold bg-primary-gold text-bg-deep font-bold shadow-md scale-105"
-                          : "border-border-custom bg-bg-card text-primary-text hover:border-secondary-gold/50"
-                      }`}
-                    >
-                      {size}
-                    </button>
-                  ))}
+
+                <div className="space-y-2">
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-semibold text-primary-text block">
+                    Abaya Length (inches)
+                  </span>
+                  <input
+                    type="number"
+                    min="48"
+                    max="62"
+                    placeholder="e.g. 56"
+                    value={customLength}
+                    onChange={(e) => setCustomLength(e.target.value)}
+                    className="w-full bg-bg-card border border-border-custom p-2.5 text-xs focus:outline-none focus:border-soft-gold text-primary-text"
+                  />
                 </div>
               </div>
             </div>
@@ -237,7 +248,7 @@ export default function ProductDetailPage({ params }) {
             <div className="space-y-4 pt-6 border-t border-border-custom">
               <div className="flex gap-4">
                 <button
-                  onClick={() => addToCart(product, selectedSize, 1)}
+                  onClick={() => addToCart(product, `${selectedSize} / ${customLength}" Length`, 1)}
                   className="flex-1 py-4 bg-primary-gold text-bg-deep text-xs uppercase tracking-[0.3em] font-bold border border-secondary-gold/40 hover:bg-champagne-gold hover:text-primary-text transition-all duration-500 shadow-lg flex items-center justify-center gap-2"
                 >
                   <ShoppingBag className="w-4 h-4" /> Add to Cart
@@ -392,7 +403,7 @@ export default function ProductDetailPage({ params }) {
                         {p.name}
                       </h4>
                     </div>
-                    <span className="font-serif text-sm font-semibold text-primary-gold ml-2">${p.price}</span>
+                    <span className="font-serif text-sm font-semibold text-primary-gold ml-2">₹{p.price}</span>
                   </div>
                 </Link>
               ))}
