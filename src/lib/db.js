@@ -133,6 +133,25 @@ export async function saveDbProducts(products, singleProduct = null) {
   setStorageItem("abaya_db_products", products);
 }
 
+export async function updateDbProduct(id, productData) {
+  try {
+    const res = await authFetch(`/api/products/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(productData),
+    });
+    if (!res.ok) {
+      const json = await res.json().catch(() => ({}));
+      throw new Error(json.message || "Failed to update product in database");
+    }
+    const json = await res.json();
+    return json.data;
+  } catch (e) {
+    console.error("Failed to update product in server DB:", e);
+    throw e;
+  }
+}
+
 export async function deleteDbProduct(id) {
   try {
     const res = await authFetch(`/api/products/${id}`, {

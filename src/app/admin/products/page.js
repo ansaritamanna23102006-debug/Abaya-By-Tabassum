@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { getDbProducts, deleteDbProduct } from "@/lib/db";
-import { LayoutDashboard, ShoppingCart, Percent, MessageSquare, ClipboardList, Trash2, Plus } from "lucide-react";
+import { LayoutDashboard, ShoppingCart, Percent, MessageSquare, ClipboardList, Trash2, Plus, Edit } from "lucide-react";
 
 export default function AdminInventory() {
   const [productsList, setProductsList] = useState([]);
@@ -150,9 +150,22 @@ export default function AdminInventory() {
                           </span>
                         </div>
                       </div>
-                      <button onClick={() => handleDeleteProduct(p.id)} className="text-red-700 hover:text-red-500 hover:bg-red-950/10 p-2.5 transition-colors border border-transparent hover:border-red-900/40">
-                        <Trash2 className="w-4 h-4" />
-                      </button>
+                      <div className="flex gap-2">
+                        <Link
+                          href={`/admin/products/edit/${p.id || p._id}`}
+                          className="text-primary-gold hover:text-champagne-gold hover:bg-bg-secondary/15 p-2.5 transition-colors border border-transparent hover:border-border-custom/50 flex items-center"
+                          title="Edit Product"
+                        >
+                          <Edit className="w-4 h-4" />
+                        </Link>
+                        <button
+                          onClick={() => handleDeleteProduct(p.id || p._id)}
+                          className="text-red-700 hover:text-red-500 hover:bg-red-950/10 p-2.5 transition-colors border border-transparent hover:border-red-900/40"
+                          title="Delete Product"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
