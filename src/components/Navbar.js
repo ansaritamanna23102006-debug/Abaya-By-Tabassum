@@ -3,27 +3,15 @@
 import React, { useState, useEffect } from "react";
 import Logo from "./Logo";
 import { useCart } from "@/context/CartContext";
-import { Search, ShoppingBag, Heart, Menu, X, Sun, Moon, User } from "lucide-react";
+import { ShoppingBag, Heart, Menu, X, Sun, Moon, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const { setIsCartOpen, cartCount, wishlist, theme, toggleTheme } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
   const [user, setUser] = useState(null);
-  const router = useRouter();
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      setIsSearchOpen(false);
-      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -129,14 +117,7 @@ export default function Navbar() {
                 )}
               </button>
 
-              {/* Search Icon */}
-              <button
-                onClick={() => setIsSearchOpen(true)}
-                className="hover:text-primary-gold transition-colors p-1.5 text-secondary-text cursor-pointer"
-                aria-label="Search Collection"
-              >
-                <Search className="w-4 h-4 stroke-[1.8]" />
-              </button>
+
 
               {/* Wishlist Icon */}
               <Link
@@ -297,47 +278,7 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Fullscreen Search Overlay */}
-      <AnimatePresence>
-        {isSearchOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-bg-deep/95 backdrop-blur-md z-50 flex flex-col justify-center px-6 md:px-24"
-          >
-            <button
-              onClick={() => setIsSearchOpen(false)}
-              className="absolute top-8 right-8 p-3 hover:text-primary-gold transition-colors text-primary-text cursor-pointer"
-              aria-label="Close search"
-            >
-              <X className="w-7 h-7" />
-            </button>
 
-            <div className="max-w-2xl mx-auto w-full text-center">
-              <h3 className="font-serif text-2xl md:text-4xl font-light tracking-wide text-primary-text mb-10">
-                Search Lookbooks
-              </h3>
-              <form onSubmit={handleSearchSubmit} className="relative border-b border-primary-gold/30 pb-3 flex items-center">
-                <input
-                  type="text"
-                  placeholder="WHAT ARE YOU SEEKING?"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-transparent text-lg md:text-2xl font-light focus:outline-none placeholder-primary-text/30 text-primary-text tracking-widest uppercase text-center"
-                  autoFocus
-                />
-                <button type="submit" className="hover:text-primary-gold transition-colors text-primary-gold ml-2 flex-shrink-0 cursor-pointer" aria-label="Submit Search">
-                  <Search className="w-5 h-5" />
-                </button>
-              </form>
-              <p className="mt-4 text-[9px] text-muted-text uppercase tracking-[0.2em]">
-                Explore premium silk abayas, velvet occasionwear, and everyday designs
-              </p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }
