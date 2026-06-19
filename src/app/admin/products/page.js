@@ -8,6 +8,13 @@ import { LayoutDashboard, ShoppingCart, Percent, MessageSquare, ClipboardList, T
 export default function AdminInventory() {
   const [productsList, setProductsList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const categories = ["All", ...new Set(productsList.map((p) => p.category).filter(Boolean))];
+
+  const filteredProducts = selectedCategory === "All"
+    ? productsList
+    : productsList.filter((p) => p.category === selectedCategory);
 
   useEffect(() => {
     const loggedUserStr = typeof window !== "undefined" ? localStorage.getItem("abaya_logged_user") : null;
@@ -119,25 +126,43 @@ export default function AdminInventory() {
           {/* Main Content Area */}
           <div className="lg:col-span-9 bg-bg-card p-5 md:p-8 border border-border-custom shadow-xs min-h-[400px]">
             <div className="space-y-6">
-              <div className="flex justify-between items-center pb-3 border-b border-border-custom">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-border-custom">
                 <h3 className="font-serif text-lg font-semibold tracking-wider">
-                  Lookbook Inventory ({productsList.length})
+                  Lookbook Inventory ({filteredProducts.length})
                 </h3>
-                <Link
-                  href="/admin/products/add"
-                  className="flex items-center gap-1 bg-primary-gold text-bg-deep px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-champagne-gold hover:text-primary-text transition-colors"
-                >
-                  <Plus className="w-3.5 h-3.5" /> Add New
-                </Link>
+                <div className="flex items-center gap-3">
+                  {!loading && productsList.length > 0 && (
+                    <div className="flex items-center gap-2">
+                      <span className="text-[9px] uppercase tracking-wider text-muted-text font-bold">Category:</span>
+                      <select
+                        value={selectedCategory}
+                        onChange={(e) => setSelectedCategory(e.target.value)}
+                        className="bg-bg-card border border-border-custom px-2 py-1 text-[11px] text-primary-text focus:outline-none focus:border-primary-gold cursor-pointer"
+                      >
+                        {categories.map((cat) => (
+                          <option key={cat} value={cat}>{cat}</option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
+                  <Link
+                    href="/admin/products/add"
+                    className="flex items-center gap-1 bg-primary-gold text-bg-deep px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest hover:bg-champagne-gold hover:text-primary-text transition-colors"
+                  >
+                    <Plus className="w-3.5 h-3.5" /> Add New
+                  </Link>
+                </div>
               </div>
 
               {loading ? (
                 <p className="text-xs italic text-muted-text font-light py-8">Loading inventory...</p>
               ) : productsList.length === 0 ? (
                 <p className="text-xs italic text-muted-text font-light py-8">No products found in database lookbook.</p>
+              ) : filteredProducts.length === 0 ? (
+                <p className="text-xs italic text-muted-text font-light py-8">No products match the selected category.</p>
               ) : (
                 <div className="space-y-4">
-                  {productsList.map((p, idx) => (
+                  {filteredProducts.map((p, idx) => (
                     <div key={p.id || p._id || idx} className="flex justify-between items-center p-4 border border-border-custom/50 bg-bg-card/40 hover:bg-bg-secondary/5 transition-colors">
                       <div className="flex gap-4 items-center">
                         {p.image && (
