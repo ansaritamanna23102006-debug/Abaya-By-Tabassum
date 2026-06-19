@@ -109,25 +109,41 @@ export default function Home() {
   const collections = [
     {
       name: "Everyday Abayas",
+<<<<<<< HEAD
       image: "/a1.png",
+=======
+      image: "/abaya-1.jpg",
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
       tagline: "Uncompromising daily comfort",
       offsetClass: "md:mt-0",
     },
     {
       name: "Premium Abayas",
+<<<<<<< HEAD
       image: "/a2.png",
+=======
+      image: "/abaya-2.jpg",
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
       tagline: "Luminous silk satins and elegant layers",
       offsetClass: "md:mt-16",
     },
     {
       name: "Occasion Wear",
+<<<<<<< HEAD
       image: "/a3.png",
+=======
+      image: "/abaya-3.jpg",
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
       tagline: "Hand-finished metallic gold velvet threadwork",
       offsetClass: "md:-mt-8",
     },
     {
       name: "New Arrivals",
+<<<<<<< HEAD
       image: "/a4.png",
+=======
+      image: "/abaya-4.jpg",
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
       tagline: "Ethereal organza couture statement layers",
       offsetClass: "md:mt-8",
     },
@@ -155,12 +171,21 @@ export default function Home() {
   ];
 
   const instagramPosts = [
+<<<<<<< HEAD
     { id: 1, image: "/a5.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
     { id: 2, image: "/a6.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
     { id: 3, image: "/a7.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
     { id: 4, image: "/a8.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
     { id: 5, image: "/a9.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
     { id: 6, image: "/a10.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+=======
+    { id: 1, image: "/abaya-5.jpg", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+    { id: 2, image: "/abaya-6.jpg", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+    { id: 3, image: "/abaya-7.jpg", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+    { id: 4, image: "/abaya-8.jpg", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+    { id: 5, image: "/abaya-9.jpg", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+    { id: 6, image: "/abaya-16.jpg", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
   ];
 
   return (
@@ -179,7 +204,11 @@ export default function Home() {
         {/* Background Image / Overlay */}
         <div className="absolute inset-0 z-0 opacity-55 hero-img-container">
           <img
+<<<<<<< HEAD
             src="/a11.png"
+=======
+            src="/abaya-17.jpg"
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
             alt="Luxury Editorial Abaya Portrait"
             className="w-full h-full object-cover object-center scale-105"
           />
@@ -229,7 +258,11 @@ export default function Home() {
             <div className="relative border border-border-custom p-3 bg-primary-gold/30 backdrop-blur-xs max-w-[320px]">
               <div className="h-[420px] w-full bg-bg-secondary overflow-hidden">
                 <img
+<<<<<<< HEAD
                   src="/a12.png"
+=======
+                  src="/abaya-18.jpg"
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
                   alt="Atelier Campaign Lookbook"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -314,7 +347,11 @@ export default function Home() {
               {/* Mobile: simple single image */}
               <div className="lg:hidden w-full aspect-[4/3] border border-border-custom p-2 bg-bg-card shadow-sm">
                 <img
+<<<<<<< HEAD
                   src="/a13.png"
+=======
+                  src="/abaya-19.jpg"
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
                   alt="Fine stitching details"
                   className="w-full h-full object-cover"
                 />
@@ -325,7 +362,11 @@ export default function Home() {
                 {/* Back Image Frame */}
                 <div className="absolute top-0 left-0 w-3/4 aspect-[3/4] border border-border-custom p-3 bg-bg-card shadow-sm transform -rotate-2">
                   <img
+<<<<<<< HEAD
                     src="/a13.png"
+=======
+                    src="/abaya-19.jpg"
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
                     alt="Fine stitching details"
                     className="w-full h-full object-cover"
                   />
@@ -333,7 +374,11 @@ export default function Home() {
                 {/* Front Overlapping Image Frame */}
                 <div className="relative z-10 w-2/3 ml-auto mt-24 aspect-[3/4] border border-border-custom p-3 bg-bg-card shadow-md transform rotate-1">
                   <img
+<<<<<<< HEAD
                     src="/a15.png"
+=======
+                    src="/abaya-20.jpg"
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
                     alt="Tabassum Design Studio Portrait"
                     className="w-full h-full object-cover"
                   />
@@ -734,7 +779,11 @@ export default function Home() {
       <section className="py-16 md:py-32 bg-primary-gold text-bg-deep relative overflow-hidden border-t border-b border-border-custom">
         <div className="absolute inset-0 opacity-15">
           <img
+<<<<<<< HEAD
             src="/a.png"
+=======
+            src="/abaya-21.jpg"
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
             alt="Fine Silk texture"
             className="w-full h-full object-cover"
           />

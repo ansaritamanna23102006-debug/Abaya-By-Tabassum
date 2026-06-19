@@ -8,8 +8,13 @@ export const products = [
     reviewsCount: 24,
     discountPrice: 285,
     badge: "Limited Edition",
+<<<<<<< HEAD
     image: "/a1.png",
     hoverImage: "/a2.png",
+=======
+    image: "/abaya-1.jpg",
+    hoverImage: "/abaya-2.jpg",
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
     sizes: ["XS", "S", "M", "L", "XL"],
     description: "Indulge in absolute luxury with the Aria Emerald Silk Abaya. Meticulously tailored from lightweight premium satin-silk blend, this abaya drapes with incomparable grace. It features delicate pleated wrist cuffs and an open front silhouette that dances elegantly with every step.",
     details: [
@@ -29,8 +34,13 @@ export const products = [
     rating: 5.0,
     reviewsCount: 16,
     badge: "Best Seller",
+<<<<<<< HEAD
     image: "/a3.png",
     hoverImage: "/a4.png",
+=======
+    image: "/abaya-3.jpg",
+    hoverImage: "/abaya-4.jpg",
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
     sizes: ["S", "M", "L", "XL"],
     description: "Designed for grand entrances, the Noor Midnight Velvet Abaya combines rich structured velvet with delicate gold hand-embroidery along the lapels and back. It represents the height of luxury modesty, keeping you warm while exuding timeless sophistication.",
     details: [
@@ -49,8 +59,13 @@ export const products = [
     price: 380,
     rating: 4.8,
     reviewsCount: 19,
+<<<<<<< HEAD
     image: "/a5.png",
     hoverImage: "/a6.png",
+=======
+    image: "/abaya-5.jpg",
+    hoverImage: "/abaya-6.jpg",
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
     sizes: ["XS", "S", "M", "L"],
     description: "An ethereal composition of light and shadow, the Seraphina Organza Abaya features a semi-transparent textured organza layer over a premium linen-ivory inner slip. The balloon sleeves add drama and fashion-forward appeal to this masterfully designed statement piece.",
     details: [
@@ -71,8 +86,13 @@ export const products = [
     reviewsCount: 38,
     discountPrice: 180,
     badge: "Essentials",
+<<<<<<< HEAD
     image: "/a7.png",
     hoverImage: "/a8.png",
+=======
+    image: "/abaya-7.jpg",
+    hoverImage: "/abaya-8.jpg",
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
     description: "The definition of everyday luxury. The Layla Abaya is crafted from wrinkle-resistant premium double georgette, featuring signature micro-pleat details on the sleeves. Designed for long-lasting comfort without sacrificing the high-fashion editorial silhouette.",
     details: [
@@ -91,8 +111,13 @@ export const products = [
     price: 240,
     rating: 4.8,
     reviewsCount: 12,
+<<<<<<< HEAD
     image: "/a9.png",
     hoverImage: "/a10.png",
+=======
+    image: "/abaya-9.jpg",
+    hoverImage: "/abaya-16.jpg",
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
     sizes: ["S", "M", "L", "XL"],
     description: "Channel desert warmth with the Soraya Linen Abaya. Tailored from a luxury flax-linen blend, this abaya keeps you exceptionally cool in warm climates while maintaining a structured, high-fashion drape. Ideal for casual sophistication or beachside lounging.",
     details: [
@@ -112,8 +137,13 @@ export const products = [
     rating: 4.9,
     reviewsCount: 31,
     badge: "Exclusive",
+<<<<<<< HEAD
     image: "/a11.png",
     hoverImage: "/a12.png",
+=======
+    image: "/abaya-17.jpg",
+    hoverImage: "/abaya-18.jpg",
+>>>>>>> fc9022908533d150c16e465c7390dbf2f2d6563c
     sizes: ["XS", "S", "M", "L", "XL"],
     description: "An absolute masterpiece. The Yasmin Abaya showcases genuine French Chantilly lace panels along the bell sleeves and bottom hem. Each lace insert is hand-sewn by our artisans to guarantee seamless alignment and exquisite detail.",
     details: [
