@@ -27,6 +27,22 @@ export default function Footer() {
             >
               <Instagram className="w-4 h-4" />
             </a>
+            <a
+              href="https://wa.me/919167600320"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 border border-primary-gold/20 rounded-full hover:bg-primary-gold hover:text-bg-deep transition-all duration-300 cursor-pointer"
+              aria-label="WhatsApp Contact"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-4 h-4"
+              >
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.863-9.864.001-2.637-1.03-5.114-2.905-6.99C16.554 1.875 14.09 .843 11.473.843c-5.437 0-9.863 4.42-9.866 9.865-.001 2.029.535 4.019 1.554 5.792L2.128 21.8l5.519-1.446z" />
+                <path d="M17.437 14.372c-.3-.149-1.77-.874-2.043-.974-.274-.1-.473-.149-.672.15-.2.298-.77.974-.944 1.173-.174.198-.348.223-.648.075-.3-.15-1.263-.465-2.403-1.482-.888-.793-1.488-1.77-1.662-2.069-.174-.298-.018-.46.131-.607.135-.133.3-.348.45-.522.15-.174.2-.298.3-.497.1-.2.05-.373-.025-.522-.075-.149-.672-1.62-.922-2.224-.244-.588-.49-.508-.672-.518-.174-.01-.373-.012-.573-.012-.2 0-.523.075-.797.373-.274.298-1.045 1.02-1.045 2.487 0 1.467 1.07 2.885 1.22 3.083.15.199 2.102 3.21 5.093 4.5 1.706.737 2.656.924 3.593.774.937-.15 1.77-.72 2.019-1.393.25-.672.25-1.243.175-1.393-.075-.15-.274-.249-.573-.398z" />
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -62,11 +78,19 @@ export default function Footer() {
           <ul className="space-y-4 text-xs text-secondary-text font-light">
             <li className="flex items-start gap-3">
               <MapPin className="w-4 h-4 text-primary-gold flex-shrink-0 mt-0.5" />
-              <span>Jumeirah Fashion District, Villa 14, Dubai, UAE</span>
+              <span className="leading-relaxed">House no 506, Sangam Society, Near Housing Board Colony, Wollen Chawl, Ambernath West, 421501</span>
             </li>
             <li className="flex items-center gap-3">
               <Phone className="w-4 h-4 text-primary-gold flex-shrink-0" />
-              <span>+91 91676 00320</span>
+              <a
+                href="https://wa.me/919167600320"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary-gold transition-colors flex items-center gap-1.5 cursor-pointer"
+              >
+                <span>+91 91676 00320</span>
+                <span className="text-[10px] text-muted-text font-normal">(WhatsApp)</span>
+              </a>
             </li>
             <li className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-primary-gold flex-shrink-0" />

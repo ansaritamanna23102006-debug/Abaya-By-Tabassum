@@ -171,8 +171,9 @@ export default function AccountDashboard() {
                   <h4 className="text-xs uppercase tracking-widest font-bold text-primary-gold">Home Primary</h4>
                   <p className="text-xs text-secondary-text leading-relaxed font-light">
                     {user.name}<br />
-                    Villa 12, Jumeirah 2<br />
-                    Dubai, UAE
+                    House no 506, Sangam Society,<br />
+                    Near Housing Board Colony, Wollen Chawl,<br />
+                    Ambernath West, 421501
                   </p>
                 </div>
               </div>
