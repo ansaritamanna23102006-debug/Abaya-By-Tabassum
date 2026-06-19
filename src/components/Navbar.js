@@ -84,7 +84,7 @@ export default function Navbar() {
           {/* Center: Brand Centerpiece Logo */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center flex-shrink-0">
             <Link href="/" className="transform transition-transform duration-500 hover:scale-105 cursor-pointer">
-              <Logo className="h-9" />
+              <Logo showMonogram={false} />
             </Link>
           </div>
 
@@ -107,7 +107,7 @@ export default function Navbar() {
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="hover:text-primary-gold transition-colors p-1.5 text-secondary-text cursor-pointer"
+                className="hidden xs:block hover:text-primary-gold transition-colors p-1.5 text-secondary-text cursor-pointer"
                 aria-label="Toggle Theme"
               >
                 {theme === "light" ? (
@@ -117,12 +117,10 @@ export default function Navbar() {
                 )}
               </button>
 
-
-
               {/* Wishlist Icon */}
               <Link
                 href="/wishlist"
-                className="relative p-1.5 hover:text-primary-gold transition-colors text-secondary-text cursor-pointer"
+                className="relative p-1.5 hover:text-primary-gold transition-colors text-secondary-text cursor-pointer hidden xs:block"
               >
                 <Heart
                   className={`w-4 h-4 stroke-[1.8] ${
@@ -152,7 +150,7 @@ export default function Navbar() {
 
               {/* Profile / Dashboard Link */}
               {user ? (
-                <div className="relative group">
+                <div className="relative group hidden xs:block">
                   <Link
                     href={user.role === "Admin" || user.role === "Super Admin" ? "/admin/dashboard" : "/account/dashboard"}
                     className="p-1.5 hover:text-primary-gold transition-colors text-secondary-text flex items-center gap-1 cursor-pointer"
@@ -185,7 +183,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   href="/login"
-                  className="p-1.5 hover:text-primary-gold transition-colors text-secondary-text cursor-pointer"
+                  className="p-1.5 hover:text-primary-gold transition-colors text-secondary-text cursor-pointer hidden xs:block"
                   aria-label="Sign In"
                 >
                   <User className="w-4 h-4 stroke-[1.8]" />
@@ -215,7 +213,7 @@ export default function Navbar() {
               className="fixed left-0 top-0 bottom-0 w-4/5 max-w-sm bg-bg-secondary z-50 flex flex-col p-8 shadow-2xl border-r border-border-custom"
             >
               <div className="flex justify-between items-center mb-12">
-                <Logo className="h-8" />
+                <Logo showMonogram={true} />
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 hover:text-primary-gold transition-colors cursor-pointer"
@@ -235,6 +233,40 @@ export default function Navbar() {
                     {item.label}
                   </Link>
                 ))}
+
+                {/* Wishlist Link inside Mobile Drawer */}
+                <Link
+                  href="/wishlist"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="hover:text-primary-gold transition-colors py-3 border-b border-border-custom cursor-pointer flex items-center justify-between"
+                >
+                  <span>Wishlist</span>
+                  <div className="flex items-center gap-1.5">
+                    <Heart className="w-3.5 h-3.5 text-primary-gold fill-primary-gold" />
+                    {wishlist.length > 0 && (
+                      <span className="bg-primary-gold text-bg-deep text-[9px] px-1.5 py-0.5 rounded-full font-bold">
+                        {wishlist.length}
+                      </span>
+                    )}
+                  </div>
+                </Link>
+
+                {/* Theme Toggle inside Mobile Drawer */}
+                <button
+                  onClick={() => {
+                    toggleTheme();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="text-left hover:text-primary-gold transition-colors py-3 border-b border-border-custom cursor-pointer flex items-center justify-between"
+                >
+                  <span>Theme: {theme === "light" ? "Light" : "Dark"}</span>
+                  {theme === "light" ? (
+                    <Moon className="w-4 h-4 text-primary-gold" />
+                  ) : (
+                    <Sun className="w-4 h-4 text-primary-gold" />
+                  )}
+                </button>
+
                 {user && (
                   <Link
                     href={user.role === "Admin" || user.role === "Super Admin" ? "/admin/dashboard" : "/account/dashboard"}

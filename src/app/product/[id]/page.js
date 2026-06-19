@@ -42,7 +42,7 @@ export default function ProductDetailPage({ params }) {
   const product = productsList.find((p) => p.id === productId);
 
   // Active gallery image
-  const [activeImage, setActiveImage] = useState("");
+  const [activeImage, setActiveImage] = useState(null);
 
   // Update active image when product changes
   useEffect(() => {
@@ -117,7 +117,7 @@ export default function ProductDetailPage({ params }) {
           <div className="lg:col-span-7 flex flex-col md:flex-row gap-6">
             {/* Thumbnails list */}
             <div className="flex md:flex-col gap-4 order-2 md:order-1">
-              {[product.image, product.hoverImage].filter(Boolean).map((imgUrl, i) => (
+              {[product.image, product.hoverImage].filter(img => img && img !== "").map((imgUrl, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveImage(imgUrl)}
@@ -137,7 +137,7 @@ export default function ProductDetailPage({ params }) {
               onMouseLeave={handleMouseLeave}
             >
               <img
-                src={activeImage}
+                src={activeImage || product.image || null}
                 alt={product.name}
                 className="w-full h-full object-cover object-center"
               />
@@ -389,7 +389,7 @@ export default function ProductDetailPage({ params }) {
                 >
                   <div className="relative h-[260px] sm:h-[320px] lg:h-[380px] bg-bg-secondary overflow-hidden border border-border-custom/50">
                     <img
-                      src={p.image}
+                      src={p.image || null}
                       alt={p.name}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                     />
