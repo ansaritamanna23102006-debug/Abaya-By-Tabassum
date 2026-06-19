@@ -3,7 +3,7 @@
 import React from "react";
 import Logo from "./Logo";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Instagram, Facebook, Globe } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -26,20 +26,6 @@ export default function Footer() {
               aria-label="Instagram Profile"
             >
               <Instagram className="w-4 h-4" />
-            </a>
-            <a
-              href="#"
-              className="p-2 border border-primary-gold/20 rounded-full hover:bg-primary-gold hover:text-bg-deep transition-all duration-300 cursor-pointer"
-              aria-label="Facebook Page"
-            >
-              <Facebook className="w-4 h-4" />
-            </a>
-            <a
-              href="#"
-              className="p-2 border border-primary-gold/20 rounded-full hover:bg-primary-gold hover:text-bg-deep transition-all duration-300 cursor-pointer"
-              aria-label="Pinterest Profile"
-            >
-              <Globe className="w-4 h-4" />
             </a>
           </div>
         </div>
