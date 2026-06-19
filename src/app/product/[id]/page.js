@@ -117,7 +117,7 @@ export default function ProductDetailPage({ params }) {
           <div className="lg:col-span-7 flex flex-col md:flex-row gap-6">
             {/* Thumbnails list */}
             <div className="flex md:flex-col gap-4 order-2 md:order-1">
-              {[product.image, product.hoverImage].map((imgUrl, i) => (
+              {[product.image, product.hoverImage].filter(Boolean).map((imgUrl, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveImage(imgUrl)}
@@ -310,7 +310,7 @@ export default function ProductDetailPage({ params }) {
                 <>
                   <p>{product.description}</p>
                   <ul className="list-disc pl-5 space-y-2 mt-4 text-primary-text/85">
-                    {product.details.map((detail, idx) => (
+                    {product.details && product.details.map((detail, idx) => (
                       <li key={idx}>{detail}</li>
                     ))}
                   </ul>
