@@ -31,14 +31,14 @@ export default function Lookbook() {
           id: "soraya-linen",
           name: "Soraya Sand Linen Abaya",
           fabric: "Belgian Flax Linen",
-          image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800&auto=format&fit=crop",
+          image: "/a9.png",
           quote: "A testament to simple luxury, mirroring the shifting desert dunes."
         },
         {
           id: "layla-classic",
           name: "Layla Pleated Georgette Abaya",
           fabric: "Japanese Double Georgette",
-          image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop",
+          image: "/a7.png",
           quote: "Tailored to move naturally with wind, presenting an ever-changing silhouette."
         }
       ]
@@ -52,14 +52,14 @@ export default function Lookbook() {
           id: "noor-velvet",
           name: "Noor Midnight Velvet Abaya",
           fabric: "Royal Velvet",
-          image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=800&auto=format&fit=crop",
+          image: "/a3.png",
           quote: "Crafted for grand entrances under chandeliers, heavy with royal sophistication."
         },
         {
           id: "yasmin-lace",
           name: "Yasmin Chantilly Lace Abaya",
           fabric: "Premium Crepe & French Lace",
-          image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=800&auto=format&fit=crop",
+          image: "/a11.png",
           quote: "A delicate juxtaposition of architectural crepe and hand-aligned Chantilly lace."
         }
       ]
@@ -73,14 +73,14 @@ export default function Lookbook() {
           id: "aria-silk",
           name: "Aria Emerald Silk Abaya",
           fabric: "Premium Silk Satin",
-          image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop",
+          image: "/a1.png",
           quote: "An ethereal drape of emerald silk that floats gracefully with every motion."
         },
         {
           id: "seraphina-organza",
           name: "Seraphina Ivory Organza Abaya",
           fabric: "Textured Organza & Cotton-Linen",
-          image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=800&auto=format&fit=crop",
+          image: "/a5.png",
           quote: "A layered composition of light and shadow, featuring balloon sleeves."
         }
       ]
@@ -198,7 +198,7 @@ export default function Lookbook() {
         {/* Editorial Spread Banner */}
         <div className="relative h-[300px] md:h-[400px] flex items-center justify-center overflow-hidden border border-border-custom">
           <img
-            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop"
+            src="/hero-bg.jpg"
             alt="Haute Couture Editorial Banner"
             className="absolute inset-0 w-full h-full object-cover object-center brightness-[0.4]"
           />

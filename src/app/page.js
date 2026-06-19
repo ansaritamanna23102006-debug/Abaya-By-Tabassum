@@ -449,11 +449,6 @@ export default function Home() {
                         alt={prod.name}
                         className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105"
                       />
-                      <img
-                        src={prod.hoverImage}
-                        alt={`${prod.name} Alternate`}
-                        className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 opacity-0 group-hover:opacity-100"
-                      />
                     </Link>
 
                     {/* Premium action buttons overlay */}
