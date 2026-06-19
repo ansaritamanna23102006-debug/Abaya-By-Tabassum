@@ -18,7 +18,6 @@ export default function AdminEditProduct({ params }) {
     price: "", 
     fabric: "", 
     image: "",
-    hoverImage: "",
     video: "",
     description: "",
     stock: 10
@@ -62,7 +61,6 @@ export default function AdminEditProduct({ params }) {
             price: match.price || "",
             fabric: match.fabric || "",
             image: match.image || "",
-            hoverImage: match.hoverImage || "",
             video: match.video || "",
             description: match.description || "",
             stock: match.stock !== undefined ? match.stock : 10
@@ -127,7 +125,6 @@ export default function AdminEditProduct({ params }) {
       fabric: newProd.fabric.trim() || "Luxury Crepe",
       sizes: sortedSizes,
       image: newProd.image,
-      hoverImage: newProd.hoverImage,
       video: newProd.video,
       stock: Number(newProd.stock),
       description: newProd.description.trim() || `Bespoke tailored ${newProd.name} styled in premium ${newProd.fabric || "Luxury Crepe"}.`,
@@ -321,21 +318,13 @@ export default function AdminEditProduct({ params }) {
                 <div className="sm:col-span-2 border border-border-custom/60 p-4 bg-bg-card/40 space-y-4">
                   <span className="text-[10px] uppercase tracking-widest font-bold text-primary-gold block">Product Imagery & Media</span>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 gap-4">
                     <div className="space-y-2">
                       <label className="text-[9px] uppercase tracking-widest font-bold text-muted-text block">Upload Main Image File</label>
                       <input type="file" accept="image/*" onChange={(e) => handleImageFileChange(e, "image")} className="text-xs text-secondary-text file:mr-4 file:py-1 file:px-3 file:border file:border-border-custom file:bg-bg-secondary file:text-primary-gold file:text-[10px] file:uppercase file:tracking-wider file:font-semibold hover:file:bg-soft-gold/10 file:cursor-pointer" />
                       
                       <label className="text-[9px] uppercase tracking-widest font-bold text-muted-text block pt-2">Or Paste Image URL</label>
                       <input type="text" placeholder="https://unsplash.com/..." value={newProd.image} onChange={(e) => setNewProd({ ...newProd, image: e.target.value })} className="w-full bg-bg-card border border-border-custom p-2 text-[11px] focus:outline-none focus:border-soft-gold" />
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="text-[9px] uppercase tracking-widest font-bold text-muted-text block">Upload Hover Image File</label>
-                      <input type="file" accept="image/*" onChange={(e) => handleImageFileChange(e, "hoverImage")} className="text-xs text-secondary-text file:mr-4 file:py-1 file:px-3 file:border file:border-border-custom file:bg-bg-secondary file:text-primary-gold file:text-[10px] file:uppercase file:tracking-wider file:font-semibold hover:file:bg-soft-gold/10 file:cursor-pointer" />
-                      
-                      <label className="text-[9px] uppercase tracking-widest font-bold text-muted-text block pt-2">Or Paste Hover URL</label>
-                      <input type="text" placeholder="https://unsplash.com/..." value={newProd.hoverImage} onChange={(e) => setNewProd({ ...newProd, hoverImage: e.target.value })} className="w-full bg-bg-card border border-border-custom p-2 text-[11px] focus:outline-none focus:border-soft-gold" />
                     </div>
 
                     {/* Video Upload */}
@@ -357,12 +346,7 @@ export default function AdminEditProduct({ params }) {
                           <img src={newProd.image} alt="Main preview" className="w-16 h-20 object-cover border border-border-custom" />
                         </div>
                       )}
-                      {newProd.hoverImage && (
-                        <div className="space-y-1">
-                          <span className="text-[8px] uppercase tracking-wider text-muted-text block text-center">Hover Preview</span>
-                          <img src={newProd.hoverImage} alt="Hover preview" className="w-16 h-20 object-cover border border-border-custom" />
-                        </div>
-                      )}
+
                       {newProd.video && (
                         <div className="space-y-1">
                           <span className="text-[8px] uppercase tracking-wider text-muted-text block text-center">Video Preview</span>

@@ -6,6 +6,7 @@ import { useCart } from "@/context/CartContext";
 import { Search, ShoppingBag, Heart, Menu, X, Sun, Moon, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const { setIsCartOpen, cartCount, wishlist, theme, toggleTheme } = useCart();
@@ -14,6 +15,15 @@ export default function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [user, setUser] = useState(null);
+  const router = useRouter();
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      setIsSearchOpen(false);
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -308,7 +318,7 @@ export default function Navbar() {
               <h3 className="font-serif text-2xl md:text-4xl font-light tracking-wide text-primary-text mb-10">
                 Search Lookbooks
               </h3>
-              <div className="relative border-b border-primary-gold/30 pb-3 flex items-center">
+              <form onSubmit={handleSearchSubmit} className="relative border-b border-primary-gold/30 pb-3 flex items-center">
                 <input
                   type="text"
                   placeholder="WHAT ARE YOU SEEKING?"
@@ -317,8 +327,10 @@ export default function Navbar() {
                   className="w-full bg-transparent text-lg md:text-2xl font-light focus:outline-none placeholder-primary-text/30 text-primary-text tracking-widest uppercase text-center"
                   autoFocus
                 />
-                <Search className="w-5 h-5 text-primary-gold ml-2 flex-shrink-0" />
-              </div>
+                <button type="submit" className="hover:text-primary-gold transition-colors text-primary-gold ml-2 flex-shrink-0 cursor-pointer" aria-label="Submit Search">
+                  <Search className="w-5 h-5" />
+                </button>
+              </form>
               <p className="mt-4 text-[9px] text-muted-text uppercase tracking-[0.2em]">
                 Explore premium silk abayas, velvet occasionwear, and everyday designs
               </p>
