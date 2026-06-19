@@ -11,7 +11,9 @@ const nextConfig = {
     root: __dirname,
   },
   async rewrites() {
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    const isDev = process.env.NODE_ENV === "development";
+    const defaultBackend = isDev ? "http://localhost:5000" : "https://abaya-backend-z5t3.onrender.com";
+    const backendUrl = process.env.NEXT_PUBLIC_API_URL || defaultBackend;
     return [
       {
         source: "/api/:path*",
