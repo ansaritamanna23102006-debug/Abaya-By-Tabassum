@@ -46,16 +46,16 @@ export default function Logo({ className = "h-8", light = false }) {
       </svg>
       {/* Brand Text */}
       <span
-        className="mt-1 text-sm font-serif font-semibold tracking-[0.25em] text-center"
+        className="mt-1 text-[11px] sm:text-xs font-serif font-semibold tracking-[0.18em] text-center"
         style={{ color: "var(--primary-gold)" }}
       >
-        TABASSUM
+        ABAYA BY TABASSUM
       </span>
       <span
         className="text-[8px] tracking-[0.4em] font-light uppercase text-center"
         style={{ color: "var(--primary-text)" }}
       >
-        Abaya Brand
+        Atelier
       </span>
     </div>
   );

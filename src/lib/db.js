@@ -222,6 +222,21 @@ export async function saveDbCoupons(coupons, newCoupon = null) {
   }
 }
 
+export async function deleteDbCoupon(code) {
+  try {
+    const res = await authFetch(`/api/coupons/${code}`, {
+      method: "DELETE",
+    });
+    if (!res.ok) {
+      const json = await res.json().catch(() => ({}));
+      throw new Error(json.message || "Failed to delete coupon from database");
+    }
+  } catch (e) {
+    console.error("Failed to delete coupon from server DB:", e);
+    throw e;
+  }
+}
+
 export async function getDbReviews() {
   try {
     const res = await fetch("/api/reviews");

@@ -109,25 +109,25 @@ export default function Home() {
   const collections = [
     {
       name: "Everyday Abayas",
-      image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=600&auto=format&fit=crop",
+      image: "/a1.png",
       tagline: "Uncompromising daily comfort",
       offsetClass: "md:mt-0",
     },
     {
       name: "Premium Abayas",
-      image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600&auto=format&fit=crop",
+      image: "/a2.png",
       tagline: "Luminous silk satins and elegant layers",
       offsetClass: "md:mt-16",
     },
     {
       name: "Occasion Wear",
-      image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=600&auto=format&fit=crop",
+      image: "/a3.png",
       tagline: "Hand-finished metallic gold velvet threadwork",
       offsetClass: "md:-mt-8",
     },
     {
       name: "New Arrivals",
-      image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=600&auto=format&fit=crop",
+      image: "/a4.png",
       tagline: "Ethereal organza couture statement layers",
       offsetClass: "md:mt-8",
     },
@@ -155,12 +155,12 @@ export default function Home() {
   ];
 
   const instagramPosts = [
-    { id: 1, image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=400&auto=format&fit=crop", link: "https://www.instagram.com/abaya_by_tabassum03/" },
-    { id: 2, image: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=400&auto=format&fit=crop", link: "https://www.instagram.com/abaya_by_tabassum03/" },
-    { id: 3, image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=400&auto=format&fit=crop", link: "https://www.instagram.com/abaya_by_tabassum03/" },
-    { id: 4, image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=400&auto=format&fit=crop", link: "https://www.instagram.com/abaya_by_tabassum03/" },
-    { id: 5, image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=400&auto=format&fit=crop", link: "https://www.instagram.com/abaya_by_tabassum03/" },
-    { id: 6, image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=400&auto=format&fit=crop", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+    { id: 1, image: "/a5.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+    { id: 2, image: "/a6.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+    { id: 3, image: "/a7.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+    { id: 4, image: "/a8.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+    { id: 5, image: "/a9.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
+    { id: 6, image: "/a10.png", link: "https://www.instagram.com/abaya_by_tabassum03/" },
   ];
 
   return (
@@ -179,7 +179,7 @@ export default function Home() {
         {/* Background Image / Overlay */}
         <div className="absolute inset-0 z-0 opacity-55 hero-img-container">
           <img
-            src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1920&auto=format&fit=crop"
+            src="/a11.png"
             alt="Luxury Editorial Abaya Portrait"
             className="w-full h-full object-cover object-center scale-105"
           />
@@ -229,7 +229,7 @@ export default function Home() {
             <div className="relative border border-border-custom p-3 bg-primary-gold/30 backdrop-blur-xs max-w-[320px]">
               <div className="h-[420px] w-full bg-bg-secondary overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600&auto=format&fit=crop"
+                  src="/a12.png"
                   alt="Atelier Campaign Lookbook"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -314,7 +314,7 @@ export default function Home() {
               {/* Mobile: simple single image */}
               <div className="lg:hidden w-full aspect-[4/3] border border-border-custom p-2 bg-bg-card shadow-sm">
                 <img
-                  src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=600&auto=format&fit=crop"
+                  src="/a13.png"
                   alt="Fine stitching details"
                   className="w-full h-full object-cover"
                 />
@@ -325,7 +325,7 @@ export default function Home() {
                 {/* Back Image Frame */}
                 <div className="absolute top-0 left-0 w-3/4 aspect-[3/4] border border-border-custom p-3 bg-bg-card shadow-sm transform -rotate-2">
                   <img
-                    src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=600&auto=format&fit=crop"
+                    src="/a13.png"
                     alt="Fine stitching details"
                     className="w-full h-full object-cover"
                   />
@@ -333,7 +333,7 @@ export default function Home() {
                 {/* Front Overlapping Image Frame */}
                 <div className="relative z-10 w-2/3 ml-auto mt-24 aspect-[3/4] border border-border-custom p-3 bg-bg-card shadow-md transform rotate-1">
                   <img
-                    src="https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?q=80&w=600&auto=format&fit=crop"
+                    src="/a15.png"
                     alt="Tabassum Design Studio Portrait"
                     className="w-full h-full object-cover"
                   />
@@ -522,15 +522,15 @@ export default function Home() {
                         {prod.discountPrice ? (
                           <div className="flex items-center gap-2">
                             <span className="font-serif text-lg font-bold text-primary-gold">
-                              ${prod.discountPrice}
+                              ₹{prod.discountPrice}
                             </span>
                             <span className="text-[11px] text-primary-text/35 line-through">
-                              ${prod.price}
+                              ₹{prod.price}
                             </span>
                           </div>
                         ) : (
                           <span className="font-serif text-lg font-bold text-primary-text">
-                            ${prod.price}
+                            ₹{prod.price}
                           </span>
                         )}
                       </div>
@@ -734,7 +734,7 @@ export default function Home() {
       <section className="py-16 md:py-32 bg-primary-gold text-bg-deep relative overflow-hidden border-t border-b border-border-custom">
         <div className="absolute inset-0 opacity-15">
           <img
-            src="https://images.unsplash.com/photo-1549064482-6779ba3292fe?q=80&w=1200&auto=format&fit=crop"
+            src="/a.png"
             alt="Fine Silk texture"
             className="w-full h-full object-cover"
           />

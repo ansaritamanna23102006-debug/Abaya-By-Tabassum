@@ -131,7 +131,7 @@ export default function WishlistPage() {
                   {/* Price and Cart Action */}
                   <div className="flex items-center justify-between pt-4 border-t border-border-custom">
                     <span className="font-serif text-base font-bold text-primary-text">
-                      ${prod.discountPrice || prod.price}
+                      ₹{prod.discountPrice || prod.price}
                     </span>
 
                     <button

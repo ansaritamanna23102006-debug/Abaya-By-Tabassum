@@ -206,24 +206,24 @@ export default function CheckoutPage() {
                   <span className="font-semibold block">{item.name}</span>
                   <span className="text-[10px] text-muted-text">Size: {item.selectedSize} | Qty: {item.quantity}</span>
                 </div>
-                <span className="font-medium text-primary-gold">${item.price * item.quantity}</span>
+                <span className="font-medium text-primary-gold">₹{item.price * item.quantity}</span>
               </div>
             ))}
           </div>
           <div className="border-t border-border-custom/50 pt-4 text-xs space-y-2 font-light text-secondary-text">
             <div className="flex justify-between">
               <span>Subtotal</span>
-              <span>${totals.subtotal}</span>
+              <span>₹{totals.subtotal}</span>
             </div>
             {totals.discount > 0 && (
               <div className="flex justify-between text-green-700">
                 <span>Discount ({totals.discount}%)</span>
-                <span>-${(totals.subtotal * totals.discount) / 100}</span>
+                <span>-₹{(totals.subtotal * totals.discount) / 100}</span>
               </div>
             )}
             <div className="flex justify-between text-sm font-semibold text-primary-text border-t border-border-custom/50 pt-3">
               <span>Payable Total</span>
-              <span className="text-primary-gold font-bold">${totals.total.toFixed(2)}</span>
+              <span className="text-primary-gold font-bold">₹{totals.total.toFixed(2)}</span>
             </div>
           </div>
         </div>
