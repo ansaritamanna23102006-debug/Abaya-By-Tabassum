@@ -130,7 +130,7 @@ sequenceDiagram
 ### 5.1 Luxury Brand Guidelines
 - **Palette**: Use premium color tokens:
   - Deep luxury background: Light Theme `#F8F5EE` (deep cream) / Dark Theme `#050505` (pure black).
-  - Gold Accent: Primary Gold `#D4AF37`, Secondary Gold `#E7D3A3`.
+  - Gold Accent: Primary Gold `#D4AF37`, Secondary Gold `#D4AF37` (with translucent border variations).
 - **Typography**:
   - Headings: Elegant serif styling (Playfair Display / Georgia) to create an editorial catalog look.
   - Body Text: Clean sans-serif (Inter / Roboto) to ensure modern clarity.

@@ -27,9 +27,9 @@
   --bg-deep: #F8F5EE;
   --bg-secondary: #F4ECE2;
   --bg-card: #FFFFFF;
-  --border-custom: #E7D3A3;
+  --border-custom: rgba(212, 175, 55, 0.3);
   --primary-gold: #D4AF37;
-  --secondary-gold: #E7D3A3;
+  --secondary-gold: #D4AF37;
   --light-gold: #FAF7F2;
   --dark-gold: #B89B5E;
   --primary-text: #050505;
