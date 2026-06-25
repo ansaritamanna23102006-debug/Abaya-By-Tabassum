@@ -3,15 +3,25 @@
 import React, { useState, useEffect } from "react";
 import Logo from "./Logo";
 import { useCart } from "@/context/CartContext";
-import { ShoppingBag, Heart, Menu, X, Sun, Moon, User } from "lucide-react";
+import { ShoppingBag, Heart, Menu, X, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const { setIsCartOpen, cartCount, wishlist, theme, toggleTheme } = useCart();
+  const { setIsCartOpen, cartCount, wishlist } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
+  const pathname = usePathname();
+
+  const isActive = (href) => {
+    if (!pathname) return false;
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,15 +77,19 @@ export default function Navbar() {
               <Menu className="w-5 h-5 stroke-[1.5]" />
             </button>
 
-            <nav className="hidden md:flex items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-semibold text-secondary-text">
+            <nav className="hidden md:flex items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-semibold">
               {menuItems.slice(0, 3).map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="hover:text-primary-gold transition-colors duration-300 relative group cursor-pointer"
+                  className={`transition-colors duration-300 relative group cursor-pointer ${
+                    isActive(item.href) ? "text-primary-gold" : "text-primary-text hover:text-primary-gold"
+                  }`}
                 >
                   {item.label}
-                  <span className="absolute bottom-[-3px] left-1/2 -translate-x-1/2 w-0 h-[1px] bg-primary-gold transition-all duration-300 group-hover:w-1/2" />
+                  <span className={`absolute bottom-[-3px] left-1/2 -translate-x-1/2 h-[1px] bg-primary-gold transition-all duration-300 group-hover:w-1/2 ${
+                    isActive(item.href) ? "w-1/2" : "w-0"
+                  }`} />
                 </Link>
               ))}
             </nav>
@@ -90,37 +104,30 @@ export default function Navbar() {
 
           {/* Right: Menu Links + Action Icons */}
           <div className="flex items-center justify-end gap-6 md:w-[38%]">
-            <nav className="hidden md:flex items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-semibold text-secondary-text mr-4">
+            <nav className="hidden md:flex items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-semibold mr-4">
               {menuItems.slice(3).map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="hover:text-primary-gold transition-colors duration-300 relative group cursor-pointer"
+                  className={`transition-colors duration-300 relative group cursor-pointer ${
+                    isActive(item.href) ? "text-primary-gold" : "text-primary-text hover:text-primary-gold"
+                  }`}
                 >
                   {item.label}
-                  <span className="absolute bottom-[-3px] left-1/2 -translate-x-1/2 w-0 h-[1px] bg-primary-gold transition-all duration-300 group-hover:w-1/2" />
+                  <span className={`absolute bottom-[-3px] left-1/2 -translate-x-1/2 h-[1px] bg-primary-gold transition-all duration-300 group-hover:w-1/2 ${
+                    isActive(item.href) ? "w-1/2" : "w-0"
+                  }`} />
                 </Link>
               ))}
             </nav>
 
             <div className="flex items-center gap-2 sm:gap-3 border-l border-border-custom pl-3 sm:pl-4 md:pl-6">
-              {/* Theme Toggle */}
-              <button
-                onClick={toggleTheme}
-                className="hidden xs:block hover:text-primary-gold transition-colors p-1.5 text-secondary-text cursor-pointer"
-                aria-label="Toggle Theme"
-              >
-                {theme === "light" ? (
-                  <Moon className="w-4 h-4 stroke-[1.8]" />
-                ) : (
-                  <Sun className="w-4 h-4 stroke-[1.8]" />
-                )}
-              </button>
+
 
               {/* Wishlist Icon */}
               <Link
                 href="/wishlist"
-                className="relative p-1.5 hover:text-primary-gold transition-colors text-secondary-text cursor-pointer hidden xs:block"
+                className="relative p-1.5 hover:text-primary-gold transition-colors text-primary-text cursor-pointer hidden xs:block"
               >
                 <Heart
                   className={`w-4 h-4 stroke-[1.8] ${
@@ -137,7 +144,7 @@ export default function Navbar() {
               {/* Cart Drawer Trigger */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative p-1.5 hover:text-primary-gold transition-colors text-secondary-text cursor-pointer"
+                className="relative p-1.5 hover:text-primary-gold transition-colors text-primary-text cursor-pointer"
                 aria-label="Open Shopping Cart"
               >
                 <ShoppingBag className="w-4 h-4 stroke-[1.8]" />
@@ -153,7 +160,7 @@ export default function Navbar() {
                 <div className="relative group hidden xs:block">
                   <Link
                     href={user.role === "Admin" || user.role === "Super Admin" ? "/admin/dashboard" : "/account/dashboard"}
-                    className="p-1.5 hover:text-primary-gold transition-colors text-secondary-text flex items-center gap-1 cursor-pointer"
+                    className="p-1.5 hover:text-primary-gold transition-colors text-primary-text flex items-center gap-1 cursor-pointer"
                     aria-label="Dashboard"
                   >
                     <User className="w-4 h-4 stroke-[1.8]" />
@@ -183,7 +190,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   href="/login"
-                  className="p-1.5 hover:text-primary-gold transition-colors text-secondary-text cursor-pointer hidden xs:block"
+                  className="p-1.5 hover:text-primary-gold transition-colors text-primary-text cursor-pointer hidden xs:block"
                   aria-label="Sign In"
                 >
                   <User className="w-4 h-4 stroke-[1.8]" />
@@ -222,13 +229,15 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <nav className="flex flex-col gap-5 text-[11px] uppercase tracking-[0.3em] font-semibold text-primary-text">
+              <nav className="flex flex-col gap-5 text-[11px] uppercase tracking-[0.3em] font-semibold">
                 {menuItems.map((item) => (
                   <Link
                     key={item.label}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="hover:text-primary-gold transition-colors py-3 border-b border-border-custom cursor-pointer"
+                    className={`transition-colors py-3 border-b border-border-custom cursor-pointer ${
+                      isActive(item.href) ? "text-primary-gold" : "text-primary-text hover:text-primary-gold"
+                    }`}
                   >
                     {item.label}
                   </Link>
@@ -251,21 +260,7 @@ export default function Navbar() {
                   </div>
                 </Link>
 
-                {/* Theme Toggle inside Mobile Drawer */}
-                <button
-                  onClick={() => {
-                    toggleTheme();
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="text-left hover:text-primary-gold transition-colors py-3 border-b border-border-custom cursor-pointer flex items-center justify-between"
-                >
-                  <span>Theme: {theme === "light" ? "Light" : "Dark"}</span>
-                  {theme === "light" ? (
-                    <Moon className="w-4 h-4 text-primary-gold" />
-                  ) : (
-                    <Sun className="w-4 h-4 text-primary-gold" />
-                  )}
-                </button>
+
 
                 {user && (
                   <Link

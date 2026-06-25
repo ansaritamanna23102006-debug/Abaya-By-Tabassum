@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="flex justify-start">
             <Logo light={true} className="items-start" />
           </div>
-          <p className="text-xs text-secondary-text leading-relaxed font-light">
+          <p className="text-xs text-secondary-text leading-relaxed font-normal">
             Timeless modesty crafted with the finest luxury fabrics and expert craftsmanship. Designed to bring grace, comfort, and distinction to the modern woman.
           </p>
           <div className="flex items-center gap-4 pt-2">
@@ -51,7 +51,7 @@ export default function Footer() {
           <h3 className="font-serif text-sm font-semibold tracking-[0.2em] text-primary-gold uppercase mb-6">
             Collections
           </h3>
-          <ul className="space-y-3 text-xs text-secondary-text font-light">
+          <ul className="space-y-3 text-xs text-secondary-text font-normal">
             <li>
               <Link href="#collections" className="hover:text-primary-gold transition-colors cursor-pointer">Everyday Abayas</Link>
             </li>
@@ -75,7 +75,7 @@ export default function Footer() {
           <h3 className="font-serif text-sm font-semibold tracking-[0.2em] text-primary-gold uppercase mb-6">
             Bespoke Service
           </h3>
-          <ul className="space-y-4 text-xs text-secondary-text font-light">
+          <ul className="space-y-4 text-xs text-secondary-text font-normal">
             <li className="flex items-start gap-3">
               <MapPin className="w-4 h-4 text-primary-gold flex-shrink-0 mt-0.5" />
               <span className="leading-relaxed">House no 506, Sangam Society, Near Housing Board Colony, Wollen Chawl, Ambernath West, 421501</span>
@@ -104,7 +104,7 @@ export default function Footer() {
           <h3 className="font-serif text-sm font-semibold tracking-[0.2em] text-primary-gold uppercase mb-6">
             The Atelier Newsletter
           </h3>
-          <p className="text-xs text-secondary-text mb-4 leading-relaxed font-light">
+          <p className="text-xs text-secondary-text mb-4 leading-relaxed font-normal">
             Subscribe to receive private previews, custom bespoke sizing events, and limited collections releases.
           </p>
           <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
@@ -124,7 +124,7 @@ export default function Footer() {
       </div>
 
       {/* Sub-Footer */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-border-custom flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-muted-text uppercase tracking-widest font-light">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-border-custom flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-muted-text uppercase tracking-widest font-normal">
         <p>© 2026 Abaya By Tabassum. All Rights Reserved.</p>
         <div className="flex gap-6">
           <a href="#" className="hover:text-primary-gold transition-colors cursor-pointer">Privacy Policy</a>

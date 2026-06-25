@@ -117,7 +117,6 @@ export default function AdminDashboard() {
                 { id: "reviews", icon: MessageSquare, label: `Reviews (${reviewsList.length})`, type: "tab" },
                 { id: "inventory", icon: ShoppingCart, label: "Lookbook Inventory", type: "link", href: "/admin/products" },
                 { id: "add-product", icon: Plus, label: "Add Product", type: "link", href: "/admin/products/add" },
-                { id: "add-coupon", icon: Percent, label: "Add Coupon", type: "link", href: "/admin/coupons/add" },
               ].map((item) => {
                 if (item.type === "link") {
                   return (
@@ -228,9 +227,17 @@ export default function AdminDashboard() {
 
             {activeTab === "coupons" && (
               <div className="space-y-6">
-                <h3 className="font-serif text-lg font-semibold tracking-wider pb-3 border-b border-border-custom">
-                  Coupon Management
-                </h3>
+                <div className="flex justify-between items-center pb-3 border-b border-border-custom gap-4">
+                  <h3 className="font-serif text-lg font-semibold tracking-wider">
+                    Coupon Management
+                  </h3>
+                  <Link
+                    href="/admin/coupons/add"
+                    className="flex items-center gap-1.5 px-3 py-1.5 border border-primary-gold bg-bg-card hover:bg-primary-gold hover:text-bg-deep text-primary-gold text-[10px] uppercase tracking-widest font-bold transition-all duration-300 rounded-none cursor-pointer"
+                  >
+                    <Plus className="w-3.5 h-3.5" /> Add Coupon
+                  </Link>
+                </div>
                 <div className="space-y-3">
                   {couponsList.map((cp, idx) => (
                     <div key={cp.code || cp._id || idx} className="flex justify-between items-center p-3.5 border border-border-custom/50 bg-bg-card/40 text-xs">

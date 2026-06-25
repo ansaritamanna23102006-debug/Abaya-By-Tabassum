@@ -1,5 +1,4 @@
 import { Playfair_Display, Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 
@@ -38,19 +37,6 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-bg-deep text-primary-text font-sans">
-        {/* Anti-flash script: runs before React hydrates to prevent white flash for dark mode users */}
-        <Script id="theme-init" strategy="beforeInteractive">
-          {`
-            (function() {
-              try {
-                var theme = localStorage.getItem('abaya_theme');
-                if (theme === 'dark') {
-                  document.documentElement.classList.add('dark');
-                }
-              } catch(e) {}
-            })();
-          `}
-        </Script>
         <CartProvider>{children}</CartProvider>
       </body>
     </html>

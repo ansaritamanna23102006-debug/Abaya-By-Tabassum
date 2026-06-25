@@ -128,12 +128,7 @@ export default function AdminAddCoupon() {
               >
                 <Plus className="w-4 h-4 flex-shrink-0" /> Add Product
               </Link>
-              <Link
-                href="/admin/coupons/add"
-                className="flex items-center gap-2 lg:gap-3 p-2.5 lg:p-3 text-[10px] lg:text-xs uppercase tracking-wider font-semibold whitespace-nowrap border-b-2 lg:border-b-0 lg:border-l-2 border-soft-gold text-primary-gold bg-bg-secondary/20"
-              >
-                <Percent className="w-4 h-4 flex-shrink-0" /> Add Coupon
-              </Link>
+
             </div>
           </div>
 

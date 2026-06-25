@@ -27,36 +27,69 @@
   --bg-deep: #F8F5EE;
   --bg-secondary: #F4ECE2;
   --bg-card: #FFFFFF;
-  --border-custom: rgba(212, 175, 55, 0.3);
-  --primary-gold: #D4AF37;
-  --secondary-gold: #D4AF37;
-  --light-gold: #FAF7F2;
-  --dark-gold: #B89B5E;
+  --border-custom: rgba(140, 115, 67, 0.35);
+  --primary-gold: #8c7343;
+  --secondary-gold: #a68d5b;
+  --light-gold: #d9c296;
+  --dark-gold: #70592e;
   --primary-text: #050505;
-  --secondary-text: #262626;
-  --muted-text: #707070;
+  --secondary-text: #151515;
+  --muted-text: #4d4d4d;
   
   --background: #F8F5EE;
   --foreground: #050505;
   --glass-bg: rgba(248, 245, 238, 0.8);
 }
 
-.dark {
-  --bg-deep: #050505;
-  --bg-secondary: #0E0E0E;
-  --bg-card: #161616;
-  --border-custom: #262626;
-  --primary-gold: #D8C08C;
-  --secondary-gold: #E8D7A8;
-  --light-gold: #F3E7C4;
-  --dark-gold: #B89B5E;
-  --primary-text: #F8F5EE;
-  --secondary-text: #D9D2C4;
-  --muted-text: #A89F91;
+/* Contextual overrides for readability inside sections with gold backgrounds (excluding hero and lookbook cards) */
+.bg-primary-gold:not(#hero):not(.collection-stagger-card),
+.bg-secondary-gold,
+.bg-champagne-gold,
+.bg-light-gold,
+.hover\:bg-primary-gold:hover,
+.hover\:bg-secondary-gold:hover,
+.hover\:bg-champagne-gold:hover {
+  /* Set text variables to dark luxury black */
+  --bg-deep: #050505 !important;
+  --color-bg-deep: #050505 !important;
   
-  --background: #050505;
-  --foreground: #F8F5EE;
-  --glass-bg: rgba(14, 14, 14, 0.8);
+  --primary-text: #050505 !important;
+  --color-primary-text: #050505 !important;
+  
+  --secondary-text: #151515 !important;
+  --color-secondary-text: #151515 !important;
+  
+  --muted-text: #4d4d4d !important;
+  --color-muted-text: #4d4d4d !important;
+  
+  /* Make borders dark/subtle on gold backgrounds */
+  --border-custom: rgba(5, 5, 5, 0.15) !important;
+  --color-border-custom: rgba(5, 5, 5, 0.15) !important;
+}
+
+/* Specific text color targets inside gold backgrounds to maintain readability and hierarchy */
+.bg-primary-gold:not(#hero):not(.collection-stagger-card) .text-champagne-gold,
+.bg-primary-gold:not(#hero):not(.collection-stagger-card) .text-soft-gold,
+.bg-primary-gold:not(#hero):not(.collection-stagger-card) .text-primary-gold,
+.bg-primary-gold:not(#hero):not(.collection-stagger-card) .text-secondary-gold,
+.bg-primary-gold:not(#hero):not(.collection-stagger-card) .text-light-gold,
+.bg-primary-gold:not(#hero):not(.collection-stagger-card) .text-dark-gold {
+  color: #4a3e2b !important;
+}
+
+/* Ensure paragraph descriptions with opacity classes inside gold backgrounds are dark */
+.bg-primary-gold:not(#hero):not(.collection-stagger-card) .text-bg-deep\/60,
+.bg-primary-gold:not(#hero):not(.collection-stagger-card) .text-bg-deep\/65 {
+  color: rgba(5, 5, 5, 0.6) !important;
+}
+
+/* Specific styling for input fields inside gold backgrounds */
+.bg-primary-gold:not(#hero):not(.collection-stagger-card) input {
+  color: #050505 !important;
+  border-color: rgba(5, 5, 5, 0.25) !important;
+}
+.bg-primary-gold:not(#hero):not(.collection-stagger-card) input::placeholder {
+  color: rgba(5, 5, 5, 0.5) !important;
 }
 
 html {

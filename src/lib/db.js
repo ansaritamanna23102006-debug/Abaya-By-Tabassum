@@ -177,7 +177,7 @@ export async function getDbOrders() {
         id: o.id || o._id
       }));
     }
-    return json;
+    return getStorageItem("abaya_db_orders", []);
   } catch (e) {
     console.warn("Orders API failed, falling back to client storage:", e);
     return getStorageItem("abaya_db_orders", []);

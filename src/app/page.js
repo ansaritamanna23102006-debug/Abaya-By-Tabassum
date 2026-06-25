@@ -173,6 +173,7 @@ export default function Home() {
 
       {/* 1. Premium Editorial Hero Section */}
       <section
+        id="hero"
         ref={heroRef}
         className="relative h-screen flex items-center justify-center pt-24 px-6 overflow-hidden bg-primary-gold"
       >

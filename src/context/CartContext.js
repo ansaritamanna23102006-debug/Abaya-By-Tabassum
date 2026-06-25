@@ -16,9 +16,8 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [wishlist, setWishlist] = useState([]);
-  const [theme, setTheme] = useState("light");
 
-  // Load cart, wishlist, and theme from localStorage on mount
+  // Load cart and wishlist from localStorage on mount
   useEffect(() => {
     const savedCart = localStorage.getItem("abaya_cart");
     if (savedCart) {
@@ -37,26 +36,7 @@ export const CartProvider = ({ children }) => {
         console.error("Error parsing wishlist data", e);
       }
     }
-
-    const savedTheme = localStorage.getItem("abaya_theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
   }, []);
-
-  // Sync theme with HTML class and localStorage
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    localStorage.setItem("abaya_theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
 
   // Save cart to localStorage
   const saveCart = (items) => {
@@ -144,8 +124,6 @@ export const CartProvider = ({ children }) => {
         clearCart,
         cartCount,
         cartTotal,
-        theme,
-        toggleTheme,
       }}
     >
       {children}

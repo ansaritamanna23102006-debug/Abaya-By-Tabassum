@@ -32,11 +32,10 @@ export default function AccountDashboard() {
       return;
     }
 
-    // Load past orders (authenticated)
     async function fetchOrders() {
       try {
         const ords = await getDbOrders();
-        setOrders(ords || []);
+        setOrders(Array.isArray(ords) ? ords : []);
       } catch (e) {
         console.error("Failed to load orders:", e);
       } finally {
